@@ -1,0 +1,20 @@
+cluster:
+  name: cluster
+  privateKey: cluster-key
+machines:
+- count: 3
+  spec:
+    backend: docker
+    # image: quay.io/footloose/ubuntu18.04
+    image: footloose-ubuntu-1804:latest
+    name: node%d
+    portMappings:
+    - containerPort: 22
+    - containerPort: 6443
+      hostPort: 6443
+    privileged: true
+    volumes:
+    - type: volume
+      destination: /var/lib/docker
+    - type: volume
+      destination: /var/lib/rancher/k3s
