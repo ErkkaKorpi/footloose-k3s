@@ -10,20 +10,16 @@
 
 ### Setup:
 
-Build a docker container from provided Dockerfile
+Bring up cluster:
 
-```docker build -t footloose-ubuntu-1804:latest .```
-
-Bring up the footloose cluster
-
-```footloose create```
-
-Install k3s with provided script
-
-```./k3s-setup.sh```
+```./bootstrap.sh create```
 
 After setup is completed cluster can be accessed by providing ```--kubeconfig ~/.kube/config-local-k3s``` to kubectl tool, for example 
 
 ```kubectl --kubeconfig ~/.kube/config-local-k3s get pods -n kube-system```
+
+Delete cluster:
+
+```./bootstrap.sh delete```
 
 this project was inspired by Jeff Poole's [**k8s-net-labs**](https://github.com/korvus81/k8s-net-labs) repo
