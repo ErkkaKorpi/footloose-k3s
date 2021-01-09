@@ -58,5 +58,5 @@ elif [[ "$1" == "delete" ]]; then
 elif [[ "$1" == "help" || -z "$1" ]]; then
     instructions
 else 
-    echo -e "\033[31mInvalid argument provided, supported arguments are 'create' or 'delete'\033[0m"
+    echo -e "\033[31mInvalid argument provided, supported arguments are 'create', 'delete' or 'help'\033[0m"
 fi
