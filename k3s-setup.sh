@@ -2,14 +2,15 @@
 
 set -eu
 
-k3s_url="https://k3s-master:6443"
+# k3s_url="https://k3s-master:6443"
+k3s_url="https://k3s-cluster-node0.k3s-cluster:6443"
 
 for i in {0..2}; do 
-    footloose ssh root@node${i} -- "cat <<EOF >> /etc/hosts
-172.17.0.2  k3s-master
-172.17.0.3  k3s-worker1
-172.17.0.4  k3s-worker2
-EOF"
+#     footloose ssh root@node${i} -- "cat <<EOF >> /etc/hosts
+# 172.17.0.2  k3s-master
+# 172.17.0.3  k3s-worker1
+# 172.17.0.4  k3s-worker2
+# EOF"
 
     # if master node (node 0)
     if [[ "$i" == 0 ]]; then

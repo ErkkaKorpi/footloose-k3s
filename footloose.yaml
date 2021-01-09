@@ -1,5 +1,5 @@
 cluster:
-  name: cluster
+  name: k3s-cluster
   privateKey: cluster-key
 machines:
 - count: 3
@@ -12,6 +12,8 @@ machines:
     - containerPort: 6443
       hostPort: 6443
     privileged: true
+    networks:
+      - k3s-cluster
     volumes:
     - type: volume
       destination: /var/lib/docker
