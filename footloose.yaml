@@ -5,7 +5,7 @@ machines:
 - count: 3
   spec:
     backend: docker
-    image: footloose-ubuntu-1804:latest
+    image: quay.io/footloose/ubuntu18.04
     name: node%d
     portMappings:
     - containerPort: 22
@@ -15,7 +15,5 @@ machines:
     networks:
       - k3s-cluster
     volumes:
-    - type: volume
-      destination: /var/lib/docker
     - type: volume
       destination: /var/lib/rancher/k3s

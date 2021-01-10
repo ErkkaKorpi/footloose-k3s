@@ -30,8 +30,6 @@ function install-k3s () {
 }
 
 function create-cluster () {
-    # Build docker container:
-    docker build -t footloose-ubuntu-1804:latest .
     # Create docker network:
     docker network create k3s-cluster
     # Create footloose cluster
